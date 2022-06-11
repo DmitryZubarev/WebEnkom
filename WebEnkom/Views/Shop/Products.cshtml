@@ -1,0 +1,44 @@
+﻿@using WebEnkom.Domain.Entity
+@model List<Product> 
+
+<head>
+          <style>
+.my_button {
+    width: 900px;
+    height: 90px;
+}
+</style>
+</head>
+<body>
+    <center>
+        <input type="submit" value="Вернуться к типам..." width="200" height="90"/>
+    </center>
+
+
+    <table>
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Количество</th>
+            <th></th>
+        </tr>
+        @foreach(var item in Model)
+    {
+        <form asp-controller="Shop" asp-action="Products" method="post">
+            <input name="typeId" value="@item.TypeId" hidden/>
+            <input name="productId" value="@item.Id" hidden/>
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>
+                    <input type="number" name="amount" value="0"/>
+                </td>
+                <td>
+                    <input type="submit" value="Добавить"/>
+                </td>
+            </tr>
+        </form>
+    }
+    </table>
+    
+</body>

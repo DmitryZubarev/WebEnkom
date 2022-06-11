@@ -1,0 +1,34 @@
+﻿<center><h1>Профиль</h1></center>
+<form asp-controller="Customers" asp-action="Account" method="post">
+    <table>
+        <tr>
+            <td>Имя:</td>
+            <td>
+                <input name="Name" value="@Information.Customer.Name"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Фамилия:</td>
+            <td>
+                <input name="Surname" value="@Information.Customer.Surname"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Отчество:</td>
+            <td>
+                <input name="Fathername" value="@Information.Customer.Fathername"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Телефон:</td>
+            <td>
+                <input name="Phone" value="@Information.Customer.Tel"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Сохранить"/>
+            </td>
+        </tr>
+    </table>
+</form>

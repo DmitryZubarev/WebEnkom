@@ -1,0 +1,34 @@
+﻿@using WebEnkom.Domain.Entity
+@model List<ProductType>
+
+<head>
+    <style>
+   .block {
+    background: #FFFFFF; /* Цвет фона */
+    padding: 20px; /* Поля вокруг текста */
+    border: 2px solid #FFFFFF; /* Параметры рамки */
+    margin: 10px; /* Отступы */
+   }
+  </style>
+  <style>
+.my_button {
+    width: 900px;
+    height: 90px;
+}
+</style>
+</head>
+<body>
+    <center><h1>Выберите тип товара...</h1></center>
+
+    @foreach (var item in Model){
+        <div class="block">
+            <center>
+                <form asp-controller="Shop" asp-action="Products" method="get">
+                    <input type="submit" value="@item.Name" class="my_button"/>
+                    <input name="typeId" hidden value="@item.Id"/>
+                </form>
+            </center>
+        </div>
+}
+</body>
+

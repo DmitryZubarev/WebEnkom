@@ -1,0 +1,30 @@
+﻿@{
+    
+}
+
+<h1>Вход</h1>
+<form asp-controller="Shop" asp-action="Autentification" method="post">
+    <table>
+        <tr>
+            <td>
+                <p>Phone number -</p>
+            </td>
+            <td>
+                <input type="number" name="Tel"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Password -</p>
+            </td>
+            <td>
+                <input type="password" name="Password"/>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Войти"/>
+</form>
+<form asp-controller="Shop" asp-action="Registration" method="get">
+    <p>Если вы не зарегистрированы, то нажмите на кнопку ниже...</p>
+    <input type="submit" value="Зарегистрироваться"/>
+</form>

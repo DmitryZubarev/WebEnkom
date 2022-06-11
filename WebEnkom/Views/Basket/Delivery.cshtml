@@ -1,0 +1,34 @@
+﻿@using WebEnkom.DAL.Interfaces
+@model IDeliveryRepository
+
+<center>
+    <h1>Доставка</h1>
+    <h4>Выберите район и заполните остальные поля:</h4>
+    <form asp-controller="Basket" asp-action="Delivery" method="post">
+        <select name="area">
+            @foreach(var item in Model.Select())
+            {
+                <option>
+                    <p>@item.Area</p>
+                </option>
+            }
+        </select>
+        <table>
+            <tr>
+                <td>Улица - </td>
+                <td><input name="street"/></td>
+            </tr>
+            <tr>
+                <td>Здание - </td>
+                <td><input name="house"/></td>
+            </tr>
+            <tr>
+                <td>Квартира - </td>
+                <td><input type="number" name="flat"/></td>
+            </tr>
+        </table>
+        <input width="150" height="100" type="submit" value="Заказать"/>
+    </form>
+
+</center>
+

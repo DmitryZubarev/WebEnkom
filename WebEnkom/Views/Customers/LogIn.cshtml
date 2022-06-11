@@ -1,0 +1,22 @@
+﻿<center><h1>Вход</h1></center>
+<form asp-controller="Customers" asp-action="LogIn" method="post">
+    <table>
+        <tr>
+            <td>
+                <p>Phone number -</p>
+            </td>
+            <td>
+                <input type="number" name="Phone"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Password -</p>
+            </td>
+            <td>
+                <input type="password" name="Password"/>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Войти"/>
+</form>
