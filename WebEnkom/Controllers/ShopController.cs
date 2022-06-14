@@ -78,9 +78,7 @@ namespace WebEnkom.Controllers
             return View(products);
         }
 
-
-
-        private void AddToBasket(int productId, int amount)
+        public void AddToBasket(int productId, int amount)
         {
             var product = _productRepository.Get(productId);
             Information.Basket.Add(product, amount);

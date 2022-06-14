@@ -11,9 +11,11 @@
 </head>
 <body>
     <center>
-        <input type="submit" value="Вернуться к типам..." width="200" height="90"/>
+        <form asp-controller="Shop" asp-action="ChooseType" method="get">
+            <input type="submit" value="Вернуться к типам..." width="200" height="90"/>
+        </form>
+        
     </center>
-
 
     <table>
         <tr>
@@ -23,7 +25,7 @@
             <th></th>
         </tr>
         @foreach(var item in Model)
-    {
+        {
         <form asp-controller="Shop" asp-action="Products" method="post">
             <input name="typeId" value="@item.TypeId" hidden/>
             <input name="productId" value="@item.Id" hidden/>
@@ -38,7 +40,7 @@
                 </td>
             </tr>
         </form>
-    }
+        }
     </table>
     
 </body>
